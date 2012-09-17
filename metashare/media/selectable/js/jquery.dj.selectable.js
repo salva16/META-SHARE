@@ -431,7 +431,6 @@ $(document).ready(function() {
 });
 
 var lastWidget = null;
-var testIframe = false;
 
 function showEditPopup(href, name, widget)
 {
@@ -441,17 +440,9 @@ function showEditPopup(href, name, widget)
     } else {
         href  += '&_popup_o2m=1';
     }
-    if(!testIframe)
-    {
-    	href += '&_caller=opener'
+	href += '&_caller=opener'
     	var win = window.open(href, name, 'height=500,width=800,resizable=yes,scrollbars=yes');
         win.focus();
-    }
-    else
-    {
-    	href += '&_caller=top'
-    	openDialog(href);
-    }
     return false;
 }
 
@@ -460,42 +451,6 @@ function dismissEditPopup(win, objId, newRepr)
 	var jqLi = lastWidget.deck.find('li[val_id=' + objId + ']');
 	var jqSpan = jqLi.find('span.title');
 	jqSpan.text(newRepr);
-	if(!testIframe)
-	{
-		win.close();
-	}
-	else
-	{
-		closeDialog();
-	}
-}
-
-
-//Test
-
-var jqDialog = null;
-
-function openDialog(href)
-{
-	jqDialog = $("<div>");
-	jqDialog.addClass("dialog");
-	var dialogOpts = {"modal": true, "width": "800", "height": "500"};
-	jqIframe = $("<iframe>");
-	jqIframe.css('width', '100%').css('height', '100%')
-	jqIframe.attr("src", href);
-	jqDialog.append(jqIframe);
-	$("body").append(jqDialog);
-	jqDialog.dialog(dialogOpts);
-}
-
-function closeDialog()
-{
-	jqIframe.remove();
-	jqIframe = null;
-	if(jqDialog != null)
-	{
-		jqDialog.remove();
-		jqDialog = null;
-	}
+	win.close();
 }
 
