@@ -29,6 +29,12 @@ $(document).ready(function() {
   $('.submit-row [name="_cancel"]').click(function(){
     $(window).unbind("beforeunload");
   });
+  // Disable Enter key for submitting
+  $('form').on('keypress', 'input[type=text]', function(event){
+  	if(event.which == 13) {
+  		return false;
+  	}
+  });
 });
 
 </script>
