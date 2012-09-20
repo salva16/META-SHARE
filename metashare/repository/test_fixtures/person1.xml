@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <personInfoType xmlns="http://www.ilsp.gr/META-XMLSchema"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.ilsp.gr/META-XMLSchema http://metashare.ilsp.gr/META-XMLSchema/v2.1/META-SHARE-Resource.xsd">
+      <surname>Smith</surname>
+      <givenName>John</givenName>
+      <communicationInfo>
+         <email>john.smith@ilc.cnr.it</email>
+         <address>15th Street</address>
+         <zipCode>12345</zipCode>
+         <city>New York</city>
+         <country>US</country>
+         <telephoneNumber>+1 4455667788</telephoneNumber>
+         <faxNumber>+1 4455667799</faxNumber>
+      </communicationInfo>
+   </personInfoType>
